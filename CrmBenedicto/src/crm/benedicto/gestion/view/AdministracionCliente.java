@@ -2,23 +2,20 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package crm.benedicto.seguridad.view;
+package crm.benedicto.gestion.view;
 
-import crm.benedicto.seguridad.model.Usuario;
-import crm.benedicto.seguridad.bd.Usuarios;
+import crm.benedicto.gestion.model.Cliente;
+import crm.benedicto.gestion.bd.Clientes;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Cesar
- */
-public class AdministracionUsuario extends javax.swing.JFrame {
+
+public class AdministracionCliente extends javax.swing.JFrame {
 
     /**
      * Creates new form AdministracionUsuario
      */
-    public AdministracionUsuario() {
+    public AdministracionCliente() {
         initComponents();
     }
 
@@ -119,14 +116,14 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 0));
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel1.setText("Administración de Usuarios");
+        jLabel1.setText("Administración de Clientes");
 
         jLabel14.setBackground(new java.awt.Color(204, 0, 0));
         jLabel14.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel14.setText("Busqueda de Usuarios");
+        jLabel14.setText("Busqueda de Clientes");
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel17.setText("Usuario");
+        jLabel17.setText("Cliente");
 
         jTextField2.setText("jTextField2");
 
@@ -177,7 +174,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
         jLabel16.setBackground(new java.awt.Color(204, 0, 0));
         jLabel16.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel16.setText("Eliminación de Usuarios");
+        jLabel16.setText("Eliminación de Clientes");
         jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         label1.setText("Usuario");
@@ -488,6 +485,11 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
         textField20.setName("txtUsuario"); // NOI18N
         textField20.setText("cdiazhuiza");
+        textField20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField20ActionPerformed(evt);
+            }
+        });
 
         jLabel18.setText("DNI - Identificación");
 
@@ -689,7 +691,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         
-        Usuario u = new Usuario(textField5.getText()
+        Cliente c = new Cliente(textField5.getText()
                 ,textField9.getText()
                 ,textField1.getText()
                 ,textField2.getText()
@@ -700,7 +702,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
                 ,textField8.getText()
                 ,"Adminsitrador");//,choice1.getName());
         
-        Usuarios.usuarios.add(u);
+        Clientes.clientes.add(c);
         
        JOptionPane.showMessageDialog(null, "OK", "SEGURIDAD", WIDTH, null);
         
@@ -710,7 +712,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         
-      ArrayList<Usuario> usuariosBusqueda = new ArrayList<Usuario>();  
+      ArrayList<Cliente> clientesBusqueda = new ArrayList<Cliente>();  
         
       JOptionPane.showMessageDialog(null,jTextField2.getText() , "SEGURIDAD", WIDTH, null);  
         
@@ -719,10 +721,11 @@ public class AdministracionUsuario extends javax.swing.JFrame {
       
       
       
-      for(Usuario objUsuaBusqueda : Usuarios.usuarios){
-          if( objUsuaBusqueda.getUsuario().indexOf(jTextField2.getText())!=-1){
-              usuariosBusqueda.add(objUsuaBusqueda);
-          }
+          
+       for(Cliente objClienteBusqueda : Clientes.clientes){
+          if( objClienteBusqueda.getNombre().indexOf(jTextField2.getText())!=-1){
+              clientesBusqueda.add(objClienteBusqueda);
+          }   
           
       }
         
@@ -735,26 +738,21 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         textArea1.append("******************");
         textArea1.append("******************");
         textArea1.append("******************");
-        textArea1.append("******************");
-        textArea1.append("******************");
         textArea1.append("******************"); 
         textArea1.append("**************************************************\n");
         
-        
-        textArea1.append(padRight("USUARIO",25));
-        textArea1.append(padRight("CONTRASEÑA",25));
-        textArea1.append(padRight("DNI",25));
+       
         textArea1.append(padRight("NOMBRE",25));
         textArea1.append(padRight("AP. PATERNO",25));
         textArea1.append(padRight("AP. MATERNO",25));
         textArea1.append(padRight("EMAIL",25));
-        textArea1.append(padRight("FEC. INGRESO",25));
-        textArea1.append(padRight("CARGO",25)); 
-        textArea1.append(padRight("ROL",25)+"\n");
+        textArea1.append(padRight("DNI",25));
+        textArea1.append(padRight("TELEFONO",25));
+        textArea1.append(padRight("CELULAR",25)); 
+        textArea1.append(padRight("FEC. CONTACTO",25)+"\n");
         
         
-        textArea1.append("******************");
-        textArea1.append("******************");
+     
         textArea1.append("******************");
         textArea1.append("******************");
         textArea1.append("******************");
@@ -764,18 +762,17 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         textArea1.append("******************"); 
         textArea1.append("**************************************************\n");
         
-        for(Usuario objUsua : usuariosBusqueda){
+        for(Cliente objCliente : clientesBusqueda){
             
-            textArea1.append(padRight( objUsua.getUsuario(),25));
-             textArea1.append(padRight(objUsua.getContrasena(),25));
-              textArea1.append(padRight( objUsua.getDni(),25));
-              textArea1.append(padRight( objUsua.getNombre(),25));
-              textArea1.append(padRight( objUsua.getApPaterno(),25));
-              textArea1.append(padRight( objUsua.getApMaterno(),25));
-              textArea1.append(padRight( objUsua.getEmail(),25));
-              textArea1.append(padRight( objUsua.getFecIngreso(),25));
-              textArea1.append(padRight( objUsua.getCargo(),25)); 
-            textArea1.append(padRight( objUsua.getRol(),25)+"\n");
+           
+              textArea1.append(padRight( objCliente.getNombre(),25));
+              textArea1.append(padRight( objCliente.getApellidoPaterno(),25));
+              textArea1.append(padRight( objCliente.getApellidoMaterno(),25));
+              textArea1.append(padRight( objCliente.getEmail(),25));
+              textArea1.append(padRight( objCliente.getDNI(),25));
+              textArea1.append(padRight( objCliente.getTelefono(),25));
+              textArea1.append(padRight( objCliente.getCelular(),25)); 
+            textArea1.append(padRight( objCliente.getFechaContacto(),25)+"\n");
                      
                 
         }     
@@ -785,12 +782,12 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
         
-        Usuario objUsuario=null; 
+        Cliente objCliente=null; 
         int contador=0;
         
-        for(Usuario objUsua : Usuarios.usuarios){
-            if(objUsua.getUsuario().equals(textField11.getText())){
-                objUsuario = objUsua;
+        for(Cliente objClien : Clientes.clientes){
+            if(objCliente.getNombre().equals(textField11.getText())){
+                objCliente = objClien;
                 contador = 1;
                 break;
             };   
@@ -798,9 +795,9 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
         if(contador == 1){
         
-            textField12.setText(objUsuario.getNombre());
-            textField13.setText(objUsuario.getApPaterno());
-            textField14.setText(objUsuario.getApMaterno());
+            textField12.setText(objCliente.getNombre());
+            textField13.setText(objCliente.getApellidoPaterno());
+            textField14.setText(objCliente.getApellidoMaterno());
             
         }else{
             JOptionPane.showMessageDialog(null,"NO SE ENCONTRO" , "SEGURIDAD", WIDTH, null);
@@ -821,12 +818,12 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
  
-        Usuario objUsuario=null; 
+       Cliente objCliente=null; 
         int contador=0;
         
-        for(Usuario objUsua : Usuarios.usuarios){
-            if(objUsua.getUsuario().equals(textField11.getText())){
-                objUsuario = objUsua;
+        for(Cliente objClien : Clientes.clientes){
+            if(objClien.getNombre().equals(textField11.getText())){
+                objCliente = objClien;
                 contador = 1;
                 break;
             };   
@@ -834,9 +831,9 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
         if(contador == 1){
         
-            textField12.setText(objUsuario.getNombre());
-            textField13.setText(objUsuario.getApPaterno());
-            textField14.setText(objUsuario.getApMaterno());
+            textField12.setText(objCliente.getNombre());
+            textField13.setText(objCliente.getApellidoPaterno());
+            textField14.setText(objCliente.getApellidoMaterno());
             
         }else{
             JOptionPane.showMessageDialog(null,"NO SE ENCONTRO" , "SEGURIDAD", WIDTH, null);
@@ -849,6 +846,10 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void textField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField20ActionPerformed
 
    private  String padRight(String s, int n) {
     return String.format("%1$-" + n + "s", s);
@@ -872,20 +873,20 @@ public class AdministracionUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdministracionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministracionCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdministracionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministracionCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdministracionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministracionCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdministracionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministracionCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdministracionUsuario().setVisible(true);
+                new AdministracionCliente().setVisible(true);
             }
         });
     }
