@@ -4,6 +4,7 @@
  */
 package crm.benedicto.seguridad.view;
 
+import crm.benedicto.seguridad.controller.AdministracionUsuarioController;
 import crm.benedicto.seguridad.model.Usuario;
 import crm.benedicto.seguridad.bd.Usuarios;
 import java.util.ArrayList;
@@ -18,6 +19,10 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     /**
      * Creates new form AdministracionUsuario
      */
+    
+    private AdministracionUsuarioController objAdmCtrl;
+  
+    
     public AdministracionUsuario() {
         initComponents();
     }
@@ -694,7 +699,11 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
-        
+
+       Usuario  objUsuario = new Usuario();
+       
+      
+       
       /*  Usuario u = new Usuario(textField5.getText()
                 ,textField9.getText()
                 ,textField1.getText()
@@ -792,27 +801,20 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Usuario objUsuario=null; 
-        int contador=0;
+        objAdmCtrl = new AdministracionUsuarioController();
         
-        for(Usuario objUsua : Usuarios.usuarios){
-            if(objUsua.getUsuario().equals(textField11.getText())){
-                objUsuario = objUsua;
-                contador = 1;
-                break;
-            };   
-        }
+        objUsuario = objAdmCtrl.validarUsuario(null);
         
-        if(contador == 1){
+        if(objUsuario == null){
+            JOptionPane.showMessageDialog(null,"El usuario no es valido" , "CRM - Administración Usuarios", WIDTH, null);
+        }else{
         
             textField12.setText(objUsuario.getNombre());
             textField13.setText(objUsuario.getApPaterno());
             textField14.setText(objUsuario.getApMaterno());
             
-        }else{
-            JOptionPane.showMessageDialog(null,"NO SE ENCONTRO" , "SEGURIDAD", WIDTH, null);
         }
-        
-        
+          
         
     }//GEN-LAST:event_button1ActionPerformed
 
@@ -832,7 +834,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
         for(Usuario objUsua : Usuarios.usuarios){
             if(objUsua.getUsuario().equals(textField11.getText())){
-                objUsuario = objUsua;
+                objUsuario = objUsua; 
                 contador = 1;
                 break;
             };   

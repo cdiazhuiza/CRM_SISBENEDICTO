@@ -4,6 +4,8 @@
  */
 package crm.benedicto.seguridad.model;
 
+import crm.benedicto.seguridad.bd.Usuarios;
+
 /**
  *
  * @author alumnos
@@ -21,8 +23,12 @@ public class Usuario {
    private String fecIngreso;
    private String cargo;
    private String rol;
+
+    public Usuario() {
+    }
    
 
+   
     public Usuario(String usuario, String contrasena) {
         this.usuario = usuario;
         this.contrasena = contrasena;
@@ -41,6 +47,7 @@ public class Usuario {
         this.rol = rol;
     }
 
+   
     // GETTERS
     
     public String getUsuario() {
