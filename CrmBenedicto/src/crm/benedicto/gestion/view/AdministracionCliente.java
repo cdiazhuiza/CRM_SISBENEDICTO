@@ -8,12 +8,14 @@ import crm.benedicto.gestion.model.Cliente;
 import crm.benedicto.gestion.bd.Clientes;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
 
 public class AdministracionCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form AdministracionUsuario
+     * Creates new form AdministracionUsuario pruebaaa koki
      */
     public AdministracionCliente() {
         initComponents();
