@@ -627,7 +627,7 @@ public class AdministracionCliente extends javax.swing.JFrame {
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         
      
-       JOptionPane.showMessageDialog(null, "OK", "SEGURIDAD", WIDTH, null);
+       JOptionPane.showMessageDialog(null, "OK", "GESTION CLIENTE", WIDTH, null);
       
      
         Cliente c = new Cliente(1
