@@ -10,13 +10,7 @@ import java.util.ArrayList;
 
 public class AutenticacionClienteController {
     
-    
-    public boolean validarCliente(String usuario, String contrasena){     
-        if(cliente.equals("cdiaz")&&contrasena.equals("carlos"))
-            return true;
-        return false;
-    }
-    
+   
     
         
     public boolean ingresarCliente(Cliente cliente){     

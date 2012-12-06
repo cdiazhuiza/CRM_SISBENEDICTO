@@ -1,21 +1,21 @@
- /*
+/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package crm.benedicto.gestion.view;
 
-import crm.benedicto.gestion.model.Cliente;
-import crm.benedicto.gestion.bd.Clientes;
+import crm.benedicto.gestion.model.Prospecto;
+import crm.benedicto.gestion.bd.Prospectos;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
-public class AdministracionCliente extends javax.swing.JFrame {
+public class AdministracionProspecto extends javax.swing.JFrame {
 
     /**
      * Creates new form AdministracionUsuario
      */
-    public AdministracionCliente() {
+    public AdministracionProspecto() {
         initComponents();
     }
 
@@ -110,11 +110,11 @@ public class AdministracionCliente extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 0));
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel1.setText("Administración de Clientes");
+        jLabel1.setText("Administración de Prospectos");
 
         jLabel14.setBackground(new java.awt.Color(204, 0, 0));
         jLabel14.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel14.setText("Busqueda de Clientes");
+        jLabel14.setText("Busqueda de Prospecto");
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel17.setText("Cliente");
@@ -168,7 +168,7 @@ public class AdministracionCliente extends javax.swing.JFrame {
 
         jLabel16.setBackground(new java.awt.Color(204, 0, 0));
         jLabel16.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel16.setText("Eliminación de Clientes");
+        jLabel16.setText("Eliminación de Prospecto");
         jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         label1.setText("Usuario");
@@ -269,7 +269,7 @@ public class AdministracionCliente extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(204, 0, 0));
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel2.setText("Información General Clientes");
+        jLabel2.setText("Información General Prospecto");
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel3.setText("Nombre");
@@ -286,7 +286,7 @@ public class AdministracionCliente extends javax.swing.JFrame {
 
         jLabel9.setText("Telefono");
 
-        jLabel10.setText("Fecha de contacto");
+        jLabel10.setText("Fecha Contacto");
 
         label2.setText("Creado Por");
 
@@ -308,11 +308,6 @@ public class AdministracionCliente extends javax.swing.JFrame {
         jTextField4.setText("jTextField4");
 
         jTextField5.setText("jTextField5");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
 
         jTextField6.setText("jTextField6");
 
@@ -339,16 +334,17 @@ public class AdministracionCliente extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(AddLayout.createSequentialGroup()
                         .addGroup(AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(AddLayout.createSequentialGroup()
                                 .addGroup(AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
                                 .addGap(52, 52, 52)
                                 .addGroup(AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextField3)
@@ -359,15 +355,14 @@ public class AdministracionCliente extends javax.swing.JFrame {
                                     .addComponent(jTextField8)
                                     .addComponent(jTextField9)
                                     .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))
-                                .addGap(549, 549, 549)
+                                .addGap(105, 105, 105)
                                 .addGroup(AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(label4, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))))
-                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addComponent(label4, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)))))
+                        .addGap(0, 211, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         AddLayout.setVerticalGroup(
@@ -382,11 +377,6 @@ public class AdministracionCliente extends javax.swing.JFrame {
                     .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AddLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddLayout.createSequentialGroup()
@@ -399,7 +389,12 @@ public class AdministracionCliente extends javax.swing.JFrame {
                                 .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(AddLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jLabel5)))))
+                                .addComponent(jLabel5))))
+                    .addGroup(AddLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
@@ -422,16 +417,16 @@ public class AdministracionCliente extends javax.swing.JFrame {
                 .addGroup(AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(147, 147, 147))
+                .addGap(157, 157, 157))
         );
 
         jTabbedPane1.addTab("Add", Add);
 
         jLabel15.setBackground(new java.awt.Color(204, 0, 0));
         jLabel15.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel15.setText("Edición de Usuarios");
+        jLabel15.setText("Edición de Prospectos");
         jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         textField15.setText("12345678");
@@ -663,11 +658,7 @@ public class AdministracionCliente extends javax.swing.JFrame {
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         
-     
-       JOptionPane.showMessageDialog(null, "OK", "SEGURIDAD", WIDTH, null);
-      
-     
-        Cliente c = new Cliente(1
+       Prospecto p = new Prospecto(1
                 ,jTextField3.getText()
                 ,jTextField4.getText()
                 ,jTextField5.getText()
@@ -677,7 +668,8 @@ public class AdministracionCliente extends javax.swing.JFrame {
                 ,Integer.parseInt(jTextField9.getText())
                 ,jTextField10.getText());
         
-       Clientes.clientes.add(c);
+        Prospectos.prospectos.add(p);
+        
         
        JOptionPane.showMessageDialog(null, "OK", "SEGURIDAD", WIDTH, null);
         
@@ -687,22 +679,19 @@ public class AdministracionCliente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         
-      ArrayList<Cliente> clientesBusqueda = new ArrayList<Cliente>();  
+      ArrayList<Prospecto> prospectosBusqueda = new ArrayList<Prospecto>();  
         
-      //JOptionPane.showMessageDialog(null,jTextField2.getText() , "SEGURIDAD", WIDTH, null);  
+      JOptionPane.showMessageDialog(null,jTextField2.getText() , "SEGURIDAD", WIDTH, null);  
         
-      //String a = jTextField2.getText();
-      JOptionPane.showMessageDialog(null,jTextField2.getText()+"" , "SEGURIDAD", WIDTH, null);  
+      String a = "Hola";
+      JOptionPane.showMessageDialog(null,a.indexOf(jTextField2.getText())+"" , "SEGURIDAD", WIDTH, null);  
       
       
       
           
-       for(Cliente objClienteBusqueda : Clientes.clientes){
-           
-      JOptionPane.showMessageDialog(null,objClienteBusqueda.getNombre()+"" , "SEGURIDAD", WIDTH, null); 
-      
-          if( objClienteBusqueda.getNombre().indexOf(jTextField2.getText())!=-1){
-              clientesBusqueda.add(objClienteBusqueda);
+       for(Prospecto objProspectoBusqueda : Prospectos.prospectos){
+          if( objProspectoBusqueda.getNombre().indexOf(jTextField2.getText())!=-1){
+              prospectosBusqueda.add(objProspectoBusqueda);
           }   
           
       }
@@ -740,17 +729,17 @@ public class AdministracionCliente extends javax.swing.JFrame {
         textArea1.append("******************"); 
         textArea1.append("**************************************************\n");
         
-        for(Cliente objCliente : clientesBusqueda){
+        for(Prospecto objProspecto : prospectosBusqueda){
             
            
-              textArea1.append(padRight( objCliente.getNombre(),25));
-              textArea1.append(padRight( objCliente.getApellidoPaterno(),25));
-              textArea1.append(padRight( objCliente.getApellidoMaterno(),25));
-              textArea1.append(padRight( objCliente.getEmail(),25));
-              textArea1.append(padRight( objCliente.getDNI()+"",25));
-              textArea1.append(padRight( objCliente.getTelefono()+"",25));
-              textArea1.append(padRight( objCliente.getCelular()+"",25)); 
-            textArea1.append(padRight( objCliente.getFechaContacto()+"",25)+"\n");
+              textArea1.append(padRight( objProspecto.getNombre(),25));
+              textArea1.append(padRight( objProspecto.getApellidoPaterno(),25));
+              textArea1.append(padRight( objProspecto.getApellidoMaterno(),25));
+              textArea1.append(padRight( objProspecto.getEmail(),25));
+              textArea1.append(padRight( objProspecto.getDNI()+"",25));
+              textArea1.append(padRight( objProspecto.getTelefono()+"",25));
+              textArea1.append(padRight( objProspecto.getCelular()+"",25)); 
+              textArea1.append(padRight( objProspecto.getFechaContacto(),25)+"\n");
                      
                 
         }     
@@ -760,12 +749,12 @@ public class AdministracionCliente extends javax.swing.JFrame {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
         
-        Cliente objCliente=null; 
+        Prospecto objProspecto=null; 
         int contador=0;
         
-        for(Cliente objClien : Clientes.clientes){
-            if(objCliente.getNombre().equals(textField11.getText())){
-                objCliente = objClien;
+        for(Prospecto objProspe : Prospectos.prospectos){
+            if(objProspe.getNombre().equals(textField11.getText())){
+                objProspecto = objProspe;
                 contador = 1;
                 break;
             };   
@@ -773,9 +762,9 @@ public class AdministracionCliente extends javax.swing.JFrame {
         
         if(contador == 1){
         
-            textField12.setText(objCliente.getNombre());
-            textField13.setText(objCliente.getApellidoPaterno());
-            textField14.setText(objCliente.getApellidoMaterno());
+            textField12.setText(objProspecto.getNombre());
+            textField13.setText(objProspecto.getApellidoPaterno());
+            textField14.setText(objProspecto.getApellidoMaterno());
             
         }else{
             JOptionPane.showMessageDialog(null,"NO SE ENCONTRO" , "SEGURIDAD", WIDTH, null);
@@ -796,12 +785,12 @@ public class AdministracionCliente extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
  
-       Cliente objCliente=null; 
+       Prospecto objProspecto=null; 
         int contador=0;
         
-        for(Cliente objClien : Clientes.clientes){
-            if(objClien.getNombre().equals(textField11.getText())){
-                objCliente = objClien;
+        for(Prospecto objProspe : Prospectos.prospectos){
+            if(objProspe.getNombre().equals(textField11.getText())){
+                objProspecto = objProspe;
                 contador = 1;
                 break;
             };   
@@ -809,9 +798,9 @@ public class AdministracionCliente extends javax.swing.JFrame {
         
         if(contador == 1){
         
-            textField12.setText(objCliente.getNombre());
-            textField13.setText(objCliente.getApellidoPaterno());
-            textField14.setText(objCliente.getApellidoMaterno());
+            textField12.setText(objProspecto.getNombre());
+            textField13.setText(objProspecto.getApellidoPaterno());
+            textField14.setText(objProspecto.getApellidoMaterno());
             
         }else{
             JOptionPane.showMessageDialog(null,"NO SE ENCONTRO" , "SEGURIDAD", WIDTH, null);
@@ -832,10 +821,6 @@ public class AdministracionCliente extends javax.swing.JFrame {
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
 
    private  String padRight(String s, int n) {
     return String.format("%1$-" + n + "s", s);
@@ -859,20 +844,20 @@ public class AdministracionCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdministracionCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministracionProspecto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdministracionCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministracionProspecto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdministracionCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministracionProspecto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdministracionCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministracionProspecto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdministracionCliente().setVisible(true);
+                new AdministracionProspecto().setVisible(true);
             }
         });
     }

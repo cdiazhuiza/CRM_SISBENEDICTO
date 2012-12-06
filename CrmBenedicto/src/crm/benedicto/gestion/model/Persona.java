@@ -4,8 +4,6 @@
  */
 package crm.benedicto.gestion.model;
 
-import java.util.Date;
-
 /**
  *
  * @author p4810
@@ -20,9 +18,9 @@ abstract class Persona {
     private int DNI;
     private int celular;
     private int telefono;
-    private Date fechaContacto;
+    private String fechaContacto;
 
-    public Persona(int codigo, String nombre, String apellidoPaterno, String apellidoMaterno, String email, int DNI, int celular, int telefono, Date fechaContacto) {
+    public Persona(int codigo, String nombre, String apellidoPaterno, String apellidoMaterno, String email, int DNI, int celular, int telefono, String fechaContacto) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -90,11 +88,11 @@ abstract class Persona {
         this.telefono = telefono;
     }
 
-    public Date getFechaContacto() {
+    public String getFechaContacto() {
         return fechaContacto;
     }
 
-    public void setFechaContacto(Date fechaContacto) {
+    public void setFechaContacto(String fechaContacto) {
         this.fechaContacto = fechaContacto;
     }
 

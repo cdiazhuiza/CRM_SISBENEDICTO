@@ -689,7 +689,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         
-        Usuario u = new Usuario(textField5.getText()
+      /*  Usuario u = new Usuario(textField5.getText()
                 ,textField9.getText()
                 ,textField1.getText()
                 ,textField2.getText()
@@ -700,7 +700,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
                 ,textField8.getText()
                 ,"Adminsitrador");//,choice1.getName());
         
-        Usuarios.usuarios.add(u);
+        Usuarios.usuarios.add(u);*/
         
        JOptionPane.showMessageDialog(null, "OK", "SEGURIDAD", WIDTH, null);
         

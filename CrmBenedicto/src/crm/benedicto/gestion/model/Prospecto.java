@@ -5,7 +5,7 @@
 package crm.benedicto.gestion.model;
 
 import crm.benedicto.gestion.model.Persona;
-import java.util.Date;
+
 
 /**
  *
@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Prospecto extends Persona{
 
-    public Prospecto(int codigo, String nombre, String apellidoPaterno, String apellidoMaterno, String email, int DNI, int celular, int telefono, Date fechaContacto) {
+    public Prospecto(int codigo, String nombre, String apellidoPaterno, String apellidoMaterno, String email, int DNI, int celular, int telefono, String fechaContacto) {
         super(codigo, nombre, apellidoPaterno, apellidoMaterno, email, DNI, celular, telefono, fechaContacto);
     }
 
