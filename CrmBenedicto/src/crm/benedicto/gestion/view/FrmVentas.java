@@ -238,20 +238,20 @@ public class FrmVentas extends javax.swing.JFrame {
             }
         });
 
-        jTextField4.setText("jTextField4");
+        jTextField4.setText("01/01/2012");
 
-        jTextField5.setText("jTextField5");
+        jTextField5.setText("Empresa1");
 
-        jTextField6.setText("jTextField6");
+        jTextField6.setText("01/01/2012");
 
-        jTextField8.setText("jTextField8");
+        jTextField8.setText("100");
         jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField8KeyPressed(evt);
             }
         });
 
-        jTextField9.setText("jTextField9");
+        jTextField9.setText("19");
         jTextField9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField9KeyPressed(evt);
@@ -266,18 +266,16 @@ public class FrmVentas extends javax.swing.JFrame {
 
         jLabel16.setText("Observaciones");
 
-        jTextField10.setText("jTextField10");
+        jTextField10.setText("119");
         jTextField10.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField10KeyPressed(evt);
             }
         });
 
-        jTextField11.setText("jTextField11");
+        jTextField11.setText("Soles");
 
-        jTextField12.setText("jTextField12");
-
-        jTextField13.setText("jTextField13");
+        jTextField12.setText("01/01/2012");
 
         jToggleButton1.setText("Agregar");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -436,7 +434,8 @@ public class FrmVentas extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-     StringBuilder Validacion= new StringBuilder();
+        try {
+            StringBuilder Validacion= new StringBuilder();
      String DocumentoGenerado="";
      
      Validacion.append( Utilitario.ValidarString(jComboBox3.getSelectedItem().toString().trim())? "": "\n  Ingresar Concepto");
@@ -470,6 +469,11 @@ public class FrmVentas extends javax.swing.JFrame {
      }else{
        JOptionPane.showMessageDialog(null, "Error al registrar el documento, revisar lo siguiente: " + Validacion.toString(), "SEGURIDAD", WIDTH, null);
      }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error..! " + e.getMessage(), "SEGURIDAD", WIDTH, null);
+        }
+        
+     
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
@@ -479,19 +483,28 @@ public class FrmVentas extends javax.swing.JFrame {
         //String a = "Hola";
         //JOptionPane.showMessageDialog(null,a.indexOf(jTextField2.getText())+"" , "SEGURIDAD", WIDTH, null);
         if(VentasBD.ListaVentas.size() <1){
-        Ventas venta1 = new Ventas("001",1,"BOL","01/01/2012","Grupo Romero SAC","01/02/2012","Nuevo",100.00,19.00,119.00,"Soles","01/03/2012","");
-        Ventas venta2 = new Ventas("001",2,"BOL","01/01/2012","Ripley SA","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
-        Ventas venta3 = new Ventas("002",1,"FAC","01/01/2012","Boticas BTL","01/02/2012","Nuevo",200.00,19.00,119.00,"Soles","01/03/2012","");
-        Ventas venta4 = new Ventas("002",2,"FAC","01/01/2012","Alicorp SAC","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
+
+            Ventas Ventas1 = new Ventas("003",201,"BOL","01/02/2012","Empresa1","01/02/2012","Nuevo",100.00,19.00,119.00,"Soles","01/11/2012","");
+            Ventas Ventas2 = new Ventas("003",202,"BOL","01/05/2012","Empresa1","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/12/2012","");
+            Ventas Ventas3 = new Ventas("005",201,"FAC","01/04/2012","Empresa2","01/02/2012","Nuevo",200.00,19.00,119.00,"Soles","01/03/2012","");
+            Ventas Ventas4 = new Ventas("005",202,"FAC","01/07/2012","Empresa2","01/04/2012","Nuevo",200.00,38.00,238.00,"Soles","01/02/2012","");
+            Ventas Ventas5 = new Ventas("005",203,"FAC","01/10/2012","Empresa3","01/06/2012","Nuevo",200.00,19.00,119.00,"Soles","01/06/2012","");
+            Ventas Ventas6 = new Ventas("005",204,"FAC","01/12/2012","Empresa3","01/09/2012","Nuevo",200.00,38.00,238.00,"Soles","01/07/2012","");
         
-        VentasBD.ListaVentas.add(venta1);
-        VentasBD.ListaVentas.add(venta2);
-        VentasBD.ListaVentas.add(venta3);
-        VentasBD.ListaVentas.add(venta4);
+        VentasBD.ListaVentas.add(Ventas1);
+        VentasBD.ListaVentas.add(Ventas2);
+        VentasBD.ListaVentas.add(Ventas3);
+        VentasBD.ListaVentas.add(Ventas4);
+        VentasBD.ListaVentas.add(Ventas5);
+        VentasBD.ListaVentas.add(Ventas6);
         }
 
         jTextArea1.setText("");
 
+         jTextArea1.append("******************");
+        jTextArea1.append("***************************");
+        jTextArea1.append("******************");
+        jTextArea1.append("******************");
         jTextArea1.append("******************");
         jTextArea1.append("******************");
         jTextArea1.append("******************");
@@ -499,13 +512,21 @@ public class FrmVentas extends javax.swing.JFrame {
         jTextArea1.append("******************");
         jTextArea1.append("**************************************************\n");
 
-        jTextArea1.append(padRight("Numero doc",25));
+        jTextArea1.append(padRight("Numero doc",30));
+        jTextArea1.append(padRight("Empresa",30));
         jTextArea1.append(padRight("Moneda",25));
         jTextArea1.append(padRight("Subtotal",25));
         jTextArea1.append(padRight("Igv",25));
         jTextArea1.append(padRight("Total",25));
+        jTextArea1.append(padRight("Fecha Emision",25));
+        jTextArea1.append(padRight("Fecha Vencimiento",25));
+        jTextArea1.append(padRight("Fecha Pago",25));
         jTextArea1.append(padRight("Estado",25)+"\n");
 
+        jTextArea1.append("******************");
+        jTextArea1.append("***************************");
+        jTextArea1.append("******************");
+        jTextArea1.append("******************");
         jTextArea1.append("******************");
         jTextArea1.append("******************");
         jTextArea1.append("******************");
@@ -517,19 +538,21 @@ public class FrmVentas extends javax.swing.JFrame {
 
             if ( (jComboBox4.getSelectedItem().toString().equalsIgnoreCase("<<Todos>>")|| jComboBox4.getSelectedItem().toString().trim().equalsIgnoreCase(objCliente.getConcepto())) && 
                  (jTextField15.getText().equals("")|| jTextField15.getText().equalsIgnoreCase(""+objCliente.getNumero())) &&
-                 (jTextField16.getText().equals("")|| jTextField16.getText().equalsIgnoreCase(""+objCliente.getFechaEmision())) &&
-                 (jTextField17.getText().equals("")|| jTextField17.getText().equalsIgnoreCase(""+objCliente.getEmpresa()))  && 
+                 (jTextField17.getText().equals("")|| jTextField17.getText().equalsIgnoreCase(""+objCliente.getFechaEmision())) &&
+                 (jTextField16.getText().equals("")|| jTextField16.getText().equalsIgnoreCase(""+objCliente.getEmpresa()))  && 
                  (jTextField18.getText().equals("")|| jTextField18.getText().equalsIgnoreCase(""+objCliente.getFechaVencimiento())) &&
                  (jComboBox2.getSelectedItem().toString().equalsIgnoreCase("<<Todos>>")|| jComboBox2.getSelectedItem().toString().trim().equalsIgnoreCase(""+objCliente.getEstado()))    
                ){
-                    jTextArea1.append(padRight( objCliente.getConcepto(),25));
-                    jTextArea1.append(padRight( objCliente.getSerie(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getNumero(),25));
-                    jTextArea1.append(padRight( objCliente.getMoneda(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getSubtotal(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getIgv(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getTotal(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getEstado(),25)+"\n");  
+                jTextArea1.append(padRight( objCliente.getConcepto() +" "+objCliente.getSerie()+"-" + objCliente.getNumero(),30));
+                jTextArea1.append(padRight( objCliente.getEmpresa(),30));
+                jTextArea1.append(padRight( objCliente.getMoneda(),25));
+                jTextArea1.append(padRight( "" + objCliente.getSubtotal(),25));
+                jTextArea1.append(padRight( "" + objCliente.getIgv(),25));
+                jTextArea1.append(padRight( "" + objCliente.getTotal(),25));
+                jTextArea1.append(padRight( "" + objCliente.getFechaEmision(),25));
+                jTextArea1.append(padRight( "" + objCliente.getFechaVencimiento(),35));
+                jTextArea1.append(padRight( "" + objCliente.getFechaPago(),25));
+                jTextArea1.append(padRight( "" + objCliente.getEstado(),25)+"\n");  
             }
         }
     }//GEN-LAST:event_jToggleButton2ActionPerformed

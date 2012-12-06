@@ -154,27 +154,29 @@ public class FrmCompras extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel21)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                                .addComponent(jLabel22))
+                                .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel18)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel19)))
+                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(jLabel22))
+                            .addComponent(jLabel19))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(173, 173, 173))
+                                .addGap(152, 152, 152))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21))))
+                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(150, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1)
                         .addGap(56, 56, 56))))
@@ -231,29 +233,29 @@ public class FrmCompras extends javax.swing.JFrame {
 
         jLabel11.setText("Igv");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("001");
 
-        jTextField2.setText("jTextField2");
+        jTextField2.setText("112");
         jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField2KeyPressed(evt);
             }
         });
 
-        jTextField4.setText("jTextField4");
+        jTextField4.setText("01/01/2012");
 
-        jTextField5.setText("jTextField5");
+        jTextField5.setText("Empresa1");
 
-        jTextField6.setText("jTextField6");
+        jTextField6.setText("15/01/2012");
 
-        jTextField8.setText("jTextField8");
+        jTextField8.setText("100");
         jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField8KeyPressed(evt);
             }
         });
 
-        jTextField9.setText("jTextField9");
+        jTextField9.setText("19");
         jTextField9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField9KeyPressed(evt);
@@ -268,18 +270,16 @@ public class FrmCompras extends javax.swing.JFrame {
 
         jLabel16.setText("Observaciones");
 
-        jTextField10.setText("jTextField10");
+        jTextField10.setText("119");
         jTextField10.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField10KeyPressed(evt);
             }
         });
 
-        jTextField11.setText("jTextField11");
+        jTextField11.setText("Soles");
 
-        jTextField12.setText("jTextField12");
-
-        jTextField13.setText("jTextField13");
+        jTextField12.setText("15/01/2012");
 
         jToggleButton1.setText("Agregar");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -337,7 +337,7 @@ public class FrmCompras extends javax.swing.JFrame {
                             .addComponent(jTextField12))))
                 .addGap(108, 108, 108)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,7 +408,7 @@ public class FrmCompras extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,18 +444,26 @@ public class FrmCompras extends javax.swing.JFrame {
         ArrayList<Compras> ComprasBusqueda = new ArrayList<Compras>();
 
         if(ComprasBD.ListaCompras.size() <1){
-            Compras Compras1 = new Compras("001",1,"BOL","01/01/2012","Grupo Romero SAC","01/02/2012","Nuevo",100.00,19.00,119.00,"Soles","01/03/2012","");
-            Compras Compras2 = new Compras("001",2,"BOL","01/01/2012","Ripley SA","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
-            Compras Compras3 = new Compras("002",1,"FAC","01/01/2012","Boticas BTL","01/02/2012","Nuevo",200.00,19.00,119.00,"Soles","01/03/2012","");
-            Compras Compras4 = new Compras("002",2,"FAC","01/01/2012","Alicorp SAC","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
+            Compras Compras1 = new Compras("001",101,"BOL","01/02/2012","Empresa1","01/02/2012","Nuevo",100.00,19.00,119.00,"Soles","01/11/2012","");
+            Compras Compras2 = new Compras("001",102,"BOL","01/05/2012","Empresa1","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/12/2012","");
+            Compras Compras3 = new Compras("002",101,"FAC","01/04/2012","Empresa2","01/02/2012","Nuevo",200.00,19.00,119.00,"Soles","01/03/2012","");
+            Compras Compras4 = new Compras("002",102,"FAC","01/07/2012","Empresa2","01/04/2012","Nuevo",200.00,38.00,238.00,"Soles","01/02/2012","");
+            Compras Compras5 = new Compras("002",103,"FAC","01/10/2012","Empresa3","01/06/2012","Nuevo",200.00,19.00,119.00,"Soles","01/06/2012","");
+            Compras Compras6 = new Compras("002",104,"FAC","01/12/2012","Empresa3","01/09/2012","Nuevo",200.00,38.00,238.00,"Soles","01/07/2012","");
 
             ComprasBD.ListaCompras.add(Compras1);
             ComprasBD.ListaCompras.add(Compras2);
             ComprasBD.ListaCompras.add(Compras3);
             ComprasBD.ListaCompras.add(Compras4);
+            ComprasBD.ListaCompras.add(Compras5);
+            ComprasBD.ListaCompras.add(Compras6);
         }
         jTextArea1.setText("");
 
+        jTextArea1.append("******************");
+        jTextArea1.append("***************************");
+        jTextArea1.append("******************");
+        jTextArea1.append("******************");
         jTextArea1.append("******************");
         jTextArea1.append("******************");
         jTextArea1.append("******************");
@@ -463,13 +471,21 @@ public class FrmCompras extends javax.swing.JFrame {
         jTextArea1.append("******************");
         jTextArea1.append("**************************************************\n");
 
-        jTextArea1.append(padRight("Numero doc",25));
+        jTextArea1.append(padRight("Numero doc",30));
+        jTextArea1.append(padRight("Empresa",30));
         jTextArea1.append(padRight("Moneda",25));
         jTextArea1.append(padRight("Subtotal",25));
         jTextArea1.append(padRight("Igv",25));
         jTextArea1.append(padRight("Total",25));
+        jTextArea1.append(padRight("Fecha Emision",25));
+        jTextArea1.append(padRight("Fecha Vencimiento",25));
+        jTextArea1.append(padRight("Fecha Pago",25));
         jTextArea1.append(padRight("Estado",25)+"\n");
 
+        jTextArea1.append("******************");
+        jTextArea1.append("***************************");
+        jTextArea1.append("******************");
+        jTextArea1.append("******************");
         jTextArea1.append("******************");
         jTextArea1.append("******************");
         jTextArea1.append("******************");
@@ -480,26 +496,31 @@ public class FrmCompras extends javax.swing.JFrame {
         for(Compras objCliente :  ComprasBD.ListaCompras){
             if ( (jComboBox4.getSelectedItem().toString().equalsIgnoreCase("<<Todos>>")|| jComboBox4.getSelectedItem().toString().trim().equalsIgnoreCase(objCliente.getConcepto())) &&
                 (jTextField15.getText().equals("")|| jTextField15.getText().equalsIgnoreCase(""+objCliente.getNumero())) &&
-                (jTextField16.getText().equals("")|| jTextField16.getText().equalsIgnoreCase(""+objCliente.getFechaEmision())) &&
-                (jTextField17.getText().equals("")|| jTextField17.getText().equalsIgnoreCase(""+objCliente.getEmpresa()))  &&
+                (jTextField17.getText().equals("")|| jTextField17.getText().equalsIgnoreCase(""+objCliente.getFechaEmision())) &&
+                (jTextField16.getText().equals("")|| jTextField16.getText().equalsIgnoreCase(""+objCliente.getEmpresa()))  &&
                 (jTextField18.getText().equals("")|| jTextField18.getText().equalsIgnoreCase(""+objCliente.getFechaVencimiento())) &&
                 (jComboBox2.getSelectedItem().toString().equalsIgnoreCase("<<Todos>>")|| jComboBox2.getSelectedItem().toString().trim().equalsIgnoreCase(""+objCliente.getEstado()))
             ){
-                jTextArea1.append(padRight( objCliente.getConcepto(),25));
-                jTextArea1.append(padRight( objCliente.getSerie(),25));
-                jTextArea1.append(padRight( "" + objCliente.getNumero(),25));
+                
+                jTextArea1.append(padRight( objCliente.getConcepto() +" "+objCliente.getSerie()+"-" + objCliente.getNumero(),30));
+                jTextArea1.append(padRight( objCliente.getEmpresa(),30));
                 jTextArea1.append(padRight( objCliente.getMoneda(),25));
                 jTextArea1.append(padRight( "" + objCliente.getSubtotal(),25));
                 jTextArea1.append(padRight( "" + objCliente.getIgv(),25));
                 jTextArea1.append(padRight( "" + objCliente.getTotal(),25));
+                jTextArea1.append(padRight( "" + objCliente.getFechaEmision(),25));
+                jTextArea1.append(padRight( "" + objCliente.getFechaVencimiento(),35));
+                jTextArea1.append(padRight( "" + objCliente.getFechaPago(),25));
                 jTextArea1.append(padRight( "" + objCliente.getEstado(),25)+"\n");
             }
         }
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        StringBuilder Validacion= new StringBuilder();
-        String DocumentoGenerado="";
+
+        try {
+             StringBuilder Validacion= new StringBuilder();
+             String DocumentoGenerado="";
 
         Validacion.append( Utilitario.ValidarString(jComboBox3.getSelectedItem().toString().trim())? "": "\n  Ingresar Concepto");
         Validacion.append( Utilitario.ValidarString(jTextField4.getText().trim())? "": "\n  Ingresar Fecha de Emision ");
@@ -532,7 +553,9 @@ public class FrmCompras extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Error al registrar el documento, revisar lo siguiente: " + Validacion.toString(), "SEGURIDAD", WIDTH, null);
         }
-
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error..! " + e.getMessage(), "SEGURIDAD", WIDTH, null);
+        }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jTextField10KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField10KeyPressed
