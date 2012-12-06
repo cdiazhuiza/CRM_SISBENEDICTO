@@ -2,7 +2,8 @@
 package crm.benedicto.utilitario;
 
 import java.util.Date;
-
+import javax.swing.JOptionPane;
+import sun.org.mozilla.javascript.internal.regexp.SubString;
 public class Utilitario {
     
     public static boolean ValidarString(String Cadena){
@@ -26,4 +27,12 @@ public class Utilitario {
         Exito = (mes > 0 && mes <=12 )? true:false; 
     return Exito;
     }
+   
+   public static void validaEnterosKeypress(java.awt.event.KeyEvent evt){
+         int k = (int) evt.getKeyChar();
+       if(k>=97 && k<=122 || k>=65 && k<=90){
+       JOptionPane.showMessageDialog(null, "Solo se permite ingresar Números ");
+       evt.consume();
+       }
+   }
 }

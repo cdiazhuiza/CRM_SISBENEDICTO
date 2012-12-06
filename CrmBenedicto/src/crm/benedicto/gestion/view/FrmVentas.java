@@ -6,6 +6,7 @@ import crm.benedicto.gestion.model.Ventas;
 import crm.benedicto.utilitario.Utilitario;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import sun.org.mozilla.javascript.internal.regexp.SubString;
 
 public class FrmVentas extends javax.swing.JFrame {
 
@@ -194,6 +195,11 @@ public class FrmVentas extends javax.swing.JFrame {
         jTextField1.setText("001");
 
         jTextField2.setText("99");
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
+            }
+        });
 
         jTextField4.setText("jTextField4");
 
@@ -202,8 +208,18 @@ public class FrmVentas extends javax.swing.JFrame {
         jTextField6.setText("jTextField6");
 
         jTextField8.setText("jTextField8");
+        jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField8KeyPressed(evt);
+            }
+        });
 
         jTextField9.setText("jTextField9");
+        jTextField9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField9KeyPressed(evt);
+            }
+        });
 
         jLabel12.setText("Total");
 
@@ -214,6 +230,11 @@ public class FrmVentas extends javax.swing.JFrame {
         jLabel16.setText("Observaciones");
 
         jTextField10.setText("jTextField10");
+        jTextField10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField10KeyPressed(evt);
+            }
+        });
 
         jTextField11.setText("jTextField11");
 
@@ -275,9 +296,9 @@ public class FrmVentas extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField11)
                             .addComponent(jTextField12))))
-                .addGap(108, 108, 108)
+                .addGap(105, 105, 105)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,16 +441,17 @@ public class FrmVentas extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(null,jTextField2.getText() , "SEGURIDAD", WIDTH, null);
         //String a = "Hola";
         //JOptionPane.showMessageDialog(null,a.indexOf(jTextField2.getText())+"" , "SEGURIDAD", WIDTH, null);
-
+        if(VentasBD.ListaVentas.size() <1){
         Ventas venta1 = new Ventas("001",1,"BOL","01/01/2012","Grupo Romero SAC","01/02/2012","Nuevo",100.00,19.00,119.00,"Soles","01/03/2012","");
         Ventas venta2 = new Ventas("001",2,"BOL","01/01/2012","Ripley SA","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
         Ventas venta3 = new Ventas("002",1,"FAC","01/01/2012","Boticas BTL","01/02/2012","Nuevo",200.00,19.00,119.00,"Soles","01/03/2012","");
         Ventas venta4 = new Ventas("002",2,"FAC","01/01/2012","Alicorp SAC","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
-
-        VentasBusqueda.add(venta1);
-        VentasBusqueda.add(venta2);
-        VentasBusqueda.add(venta3);
-        VentasBusqueda.add(venta4);
+        
+        VentasBD.ListaVentas.add(venta1);
+        VentasBD.ListaVentas.add(venta2);
+        VentasBD.ListaVentas.add(venta3);
+        VentasBD.ListaVentas.add(venta4);
+        }
 
         jTextArea1.setText("");
 
@@ -454,7 +476,7 @@ public class FrmVentas extends javax.swing.JFrame {
         jTextArea1.append("******************");
         jTextArea1.append("**************************************************\n");
     
-        for(Ventas objCliente : VentasBusqueda){
+        for(Ventas objCliente : VentasBD.ListaVentas){
 
             if ( (jComboBox4.getSelectedItem().toString().equalsIgnoreCase("<<Todos>>")|| jComboBox4.getSelectedItem().toString().trim().equalsIgnoreCase(objCliente.getConcepto())) && 
                  (jTextField15.getText().equals("")|| jTextField15.getText().equalsIgnoreCase(""+objCliente.getNumero())) &&
@@ -474,6 +496,26 @@ public class FrmVentas extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+
+       Utilitario.validaEnterosKeypress(evt);
+    }//GEN-LAST:event_jTextField2KeyPressed
+
+    private void jTextField8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyPressed
+        // TODO add your handling code here:
+        Utilitario.validaEnterosKeypress(evt);
+    }//GEN-LAST:event_jTextField8KeyPressed
+
+    private void jTextField9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField9KeyPressed
+        // TODO add your handling code here:
+        Utilitario.validaEnterosKeypress(evt);
+    }//GEN-LAST:event_jTextField9KeyPressed
+
+    private void jTextField10KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField10KeyPressed
+        Utilitario.validaEnterosKeypress(evt);       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10KeyPressed
 
     private  String padRight(String s, int n) {
     return String.format("%1$-" + n + "s", s);
