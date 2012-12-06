@@ -17,8 +17,7 @@ public class AdministracionUsuarioController {
     public AdministracionUsuarioController() {
         
     }
-    
-    
+      
     
     public Usuario validarUsuario(String usuario){
         

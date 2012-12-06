@@ -573,10 +573,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
                         .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(12, 12, 12))
                     .addGroup(EditarLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(EditarLayout.createSequentialGroup()
                         .addGroup(EditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -607,7 +603,10 @@ public class AdministracionUsuario extends javax.swing.JFrame {
                                 .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(label9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(147, Short.MAX_VALUE))))
+                        .addContainerGap(147, Short.MAX_VALUE))
+                    .addGroup(EditarLayout.createSequentialGroup()
+                        .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         EditarLayout.setVerticalGroup(
             EditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -667,9 +666,9 @@ public class AdministracionUsuario extends javax.swing.JFrame {
                         .addGroup(EditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel22)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         textField20.getAccessibleContext().setAccessibleName("txtUsuario");
@@ -790,7 +789,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    //INGRESAR
+    //INGRESAR USUARIO
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
 
        Usuario  objUsuario = new Usuario();
@@ -820,7 +819,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_button4ActionPerformed
 
-    //BUScAR
+    //BUScAR USUARIO
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
       pintarCabecera();
@@ -899,7 +898,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         }  
     }
     
-    // VALIDAR USUARIO
+    // VALIDAR USUARIO - ELIMINAR
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         
         
@@ -934,9 +933,9 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textField18ActionPerformed
 
+    // EDITAR USUARIO
     private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
-        // TODO add your handling code here:
-        
+              
          if(usuEdit != -1){
             if(Usuarios.usuarios.get(usuEdit).getUsuario().equals(textField20.getText())){
                 
@@ -978,6 +977,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_button5ActionPerformed
 
+    // VALIDAR USUARIO - EDITAR
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       
  
@@ -1031,6 +1031,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    // LIMPIAR - ELIMINAR
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
         
@@ -1066,6 +1067,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_button3ActionPerformed
 
+    // VALIDAR USUARIO - CAMBIAR CONTRASEÑA
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
                 
@@ -1086,7 +1088,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"El usuario no es valido" , "CRM - Administración Usuarios", WIDTH, null);
         }else{
                    
-            JOptionPane.showMessageDialog(null,"El usuario es valido, puedo cambiar su contraseña" , "CRM - Administración Usuarios", WIDTH, null);
+            JOptionPane.showMessageDialog(null,"El usuario es valido, se puede cambiar su contraseña" , "CRM - Administración Usuarios", WIDTH, null);
             
             usuPWD = objUsuario.getIndice();
             strPWD = objUsuario.getContrasena();
@@ -1097,6 +1099,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    // CAMBIAR CONTRASEÑA
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         
@@ -1151,22 +1154,12 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    
-    private Usuario obtenerUsurioPWD(String usuario){
-                 
-        objAdmCtrl = new AdministracionUsuarioController();
-            
-        return objAdmCtrl.validarUsuario(jTextField13.getText());  
-    }
-    
+        
    private  String padRight(String s, int n) {
     return String.format("%1$-" + n + "s", s);
   }
     
     
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
