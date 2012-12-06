@@ -20,7 +20,6 @@ public class FrmCompras extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel14 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -39,6 +38,9 @@ public class FrmCompras extends javax.swing.JFrame {
         jTextField18 = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox();
+        jToggleButton5 = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        jToggleButton3 = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -69,11 +71,6 @@ public class FrmCompras extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel14.setBackground(new java.awt.Color(204, 0, 0));
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel14.setText("Compras");
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel17.setBackground(new java.awt.Color(204, 0, 0));
         jLabel17.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -107,17 +104,44 @@ public class FrmCompras extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<<Todos>>", "Nuevo", "Anulada", "Cancelada", " " }));
 
+        jToggleButton5.setText("<<Prospecto>>");
+        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton5ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton4.setText("<<Cliente>>");
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton3.setText("<<Ventas>>");
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToggleButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jToggleButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jToggleButton3)
+                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,7 +155,7 @@ public class FrmCompras extends javax.swing.JFrame {
                                 .addComponent(jLabel21)
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                                 .addComponent(jLabel22))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,7 +174,10 @@ public class FrmCompras extends javax.swing.JFrame {
                                 .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21))))))
+                                .addGap(21, 21, 21))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addGap(56, 56, 56))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +203,12 @@ public class FrmCompras extends javax.swing.JFrame {
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jToggleButton3)
+                    .addComponent(jToggleButton4)
+                    .addComponent(jToggleButton5))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Consultar", jPanel1);
@@ -305,7 +337,7 @@ public class FrmCompras extends javax.swing.JFrame {
                             .addComponent(jTextField12))))
                 .addGap(108, 108, 108)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,7 +399,7 @@ public class FrmCompras extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel16)
                     .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ingresar", jPanel2);
@@ -376,44 +408,52 @@ public class FrmCompras extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+        FrmVentas Ventas  = new FrmVentas();
+        this.hide();
+        Ventas.setVisible(true);
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        // TODO add your handling code here:
+        AdministracionCliente  cliente= new AdministracionCliente();
+        this.hide();
+        cliente.setVisible(true);
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
+        // TODO add your handling code here:
+        AdministracionProspecto  prospecto= new AdministracionProspecto();
+        this.hide();
+        prospecto.setVisible(true);
+    }//GEN-LAST:event_jToggleButton5ActionPerformed
+
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         // TODO add your handling code here:
         ArrayList<Compras> ComprasBusqueda = new ArrayList<Compras>();
-      
-        if(ComprasBD.ListaCompras.size() <1){
-        Compras Compras1 = new Compras("001",1,"BOL","01/01/2012","Grupo Romero SAC","01/02/2012","Nuevo",100.00,19.00,119.00,"Soles","01/03/2012","");
-        Compras Compras2 = new Compras("001",2,"BOL","01/01/2012","Ripley SA","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
-        Compras Compras3 = new Compras("002",1,"FAC","01/01/2012","Boticas BTL","01/02/2012","Nuevo",200.00,19.00,119.00,"Soles","01/03/2012","");
-        Compras Compras4 = new Compras("002",2,"FAC","01/01/2012","Alicorp SAC","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
 
-        ComprasBD.ListaCompras.add(Compras1);
-        ComprasBD.ListaCompras.add(Compras2);
-        ComprasBD.ListaCompras.add(Compras3);
-        ComprasBD.ListaCompras.add(Compras4);
-       }
+        if(ComprasBD.ListaCompras.size() <1){
+            Compras Compras1 = new Compras("001",1,"BOL","01/01/2012","Grupo Romero SAC","01/02/2012","Nuevo",100.00,19.00,119.00,"Soles","01/03/2012","");
+            Compras Compras2 = new Compras("001",2,"BOL","01/01/2012","Ripley SA","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
+            Compras Compras3 = new Compras("002",1,"FAC","01/01/2012","Boticas BTL","01/02/2012","Nuevo",200.00,19.00,119.00,"Soles","01/03/2012","");
+            Compras Compras4 = new Compras("002",2,"FAC","01/01/2012","Alicorp SAC","01/02/2012","Nuevo",200.00,38.00,238.00,"Soles","01/03/2012","");
+
+            ComprasBD.ListaCompras.add(Compras1);
+            ComprasBD.ListaCompras.add(Compras2);
+            ComprasBD.ListaCompras.add(Compras3);
+            ComprasBD.ListaCompras.add(Compras4);
+        }
         jTextArea1.setText("");
 
         jTextArea1.append("******************");
@@ -438,41 +478,39 @@ public class FrmCompras extends javax.swing.JFrame {
         jTextArea1.append("**************************************************\n");
 
         for(Compras objCliente :  ComprasBD.ListaCompras){
-          if ( (jComboBox4.getSelectedItem().toString().equalsIgnoreCase("<<Todos>>")|| jComboBox4.getSelectedItem().toString().trim().equalsIgnoreCase(objCliente.getConcepto())) && 
-                 (jTextField15.getText().equals("")|| jTextField15.getText().equalsIgnoreCase(""+objCliente.getNumero())) &&
-                 (jTextField16.getText().equals("")|| jTextField16.getText().equalsIgnoreCase(""+objCliente.getFechaEmision())) &&
-                 (jTextField17.getText().equals("")|| jTextField17.getText().equalsIgnoreCase(""+objCliente.getEmpresa()))  && 
-                 (jTextField18.getText().equals("")|| jTextField18.getText().equalsIgnoreCase(""+objCliente.getFechaVencimiento())) &&
-                 (jComboBox2.getSelectedItem().toString().equalsIgnoreCase("<<Todos>>")|| jComboBox2.getSelectedItem().toString().trim().equalsIgnoreCase(""+objCliente.getEstado()))    
-               ){
-                    jTextArea1.append(padRight( objCliente.getConcepto(),25));
-                    jTextArea1.append(padRight( objCliente.getSerie(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getNumero(),25));
-                    jTextArea1.append(padRight( objCliente.getMoneda(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getSubtotal(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getIgv(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getTotal(),25));
-                    jTextArea1.append(padRight( "" + objCliente.getEstado(),25)+"\n");  
+            if ( (jComboBox4.getSelectedItem().toString().equalsIgnoreCase("<<Todos>>")|| jComboBox4.getSelectedItem().toString().trim().equalsIgnoreCase(objCliente.getConcepto())) &&
+                (jTextField15.getText().equals("")|| jTextField15.getText().equalsIgnoreCase(""+objCliente.getNumero())) &&
+                (jTextField16.getText().equals("")|| jTextField16.getText().equalsIgnoreCase(""+objCliente.getFechaEmision())) &&
+                (jTextField17.getText().equals("")|| jTextField17.getText().equalsIgnoreCase(""+objCliente.getEmpresa()))  &&
+                (jTextField18.getText().equals("")|| jTextField18.getText().equalsIgnoreCase(""+objCliente.getFechaVencimiento())) &&
+                (jComboBox2.getSelectedItem().toString().equalsIgnoreCase("<<Todos>>")|| jComboBox2.getSelectedItem().toString().trim().equalsIgnoreCase(""+objCliente.getEstado()))
+            ){
+                jTextArea1.append(padRight( objCliente.getConcepto(),25));
+                jTextArea1.append(padRight( objCliente.getSerie(),25));
+                jTextArea1.append(padRight( "" + objCliente.getNumero(),25));
+                jTextArea1.append(padRight( objCliente.getMoneda(),25));
+                jTextArea1.append(padRight( "" + objCliente.getSubtotal(),25));
+                jTextArea1.append(padRight( "" + objCliente.getIgv(),25));
+                jTextArea1.append(padRight( "" + objCliente.getTotal(),25));
+                jTextArea1.append(padRight( "" + objCliente.getEstado(),25)+"\n");
             }
         }
     }//GEN-LAST:event_jToggleButton2ActionPerformed
-    private  String padRight(String s, int n) {
-    return String.format("%1$-" + n + "s", s);
-    }
+
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-     StringBuilder Validacion= new StringBuilder();
-     String DocumentoGenerado="";
-     
-     Validacion.append( Utilitario.ValidarString(jComboBox3.getSelectedItem().toString().trim())? "": "\n  Ingresar Concepto");
-     Validacion.append( Utilitario.ValidarString(jTextField4.getText().trim())? "": "\n  Ingresar Fecha de Emision ");
-     Validacion.append( Utilitario.ValidarString(jTextField6.getText().trim())? "": "\n  Ingresar Fecha de Vencimiento");
-     Validacion.append( Utilitario.ValidarString(jTextField11.getText().trim())? "": "\n  Ingresar Moneda");
-     Validacion.append( Utilitario.ValidarNumero(Double.parseDouble(jTextField8.getText().trim()))? "": "\n  Ingresar Subtotal ");
-     Validacion.append( Utilitario.ValidarNumero(Double.parseDouble(jTextField9.getText().trim()))? "": "\n  Ingresar Igv");
-     Validacion.append( Utilitario.ValidarNumero(Double.parseDouble(jTextField10.getText().trim()))? "": "\n  Ingresar Total ");
-    
-  if(Validacion.toString().isEmpty()){
-        Compras c = new Compras(
+        StringBuilder Validacion= new StringBuilder();
+        String DocumentoGenerado="";
+
+        Validacion.append( Utilitario.ValidarString(jComboBox3.getSelectedItem().toString().trim())? "": "\n  Ingresar Concepto");
+        Validacion.append( Utilitario.ValidarString(jTextField4.getText().trim())? "": "\n  Ingresar Fecha de Emision ");
+        Validacion.append( Utilitario.ValidarString(jTextField6.getText().trim())? "": "\n  Ingresar Fecha de Vencimiento");
+        Validacion.append( Utilitario.ValidarString(jTextField11.getText().trim())? "": "\n  Ingresar Moneda");
+        Validacion.append( Utilitario.ValidarNumero(Double.parseDouble(jTextField8.getText().trim()))? "": "\n  Ingresar Subtotal ");
+        Validacion.append( Utilitario.ValidarNumero(Double.parseDouble(jTextField9.getText().trim()))? "": "\n  Ingresar Igv");
+        Validacion.append( Utilitario.ValidarNumero(Double.parseDouble(jTextField10.getText().trim()))? "": "\n  Ingresar Total ");
+
+        if(Validacion.toString().isEmpty()){
+            Compras c = new Compras(
                 jTextField1.getText()
                 , Integer.parseInt(jTextField2.getText())
                 ,jComboBox3.getSelectedItem().toString().trim()
@@ -486,38 +524,39 @@ public class FrmCompras extends javax.swing.JFrame {
                 ,jTextField11.getText()
                 ,jTextField12.getText()
                 ,jTextField13.getText()
-        );//,choice1.getName());
+            );//,choice1.getName());
 
-        
-      DocumentoGenerado = c.getConcepto() +" "+c.getSerie()+"-"+  c.getNumero();
-        ComprasBD.ListaCompras.add(c);
-       JOptionPane.showMessageDialog(null, "Se registró satisfactoriamente el documento: " + DocumentoGenerado, "SEGURIDAD", WIDTH, null);
-     }else{
-       JOptionPane.showMessageDialog(null, "Error al registrar el documento, revisar lo siguiente: " + Validacion.toString(), "SEGURIDAD", WIDTH, null);
-     }
-       
+            DocumentoGenerado = c.getConcepto() +" "+c.getSerie()+"-"+  c.getNumero();
+            ComprasBD.ListaCompras.add(c);
+            JOptionPane.showMessageDialog(null, "Se registró satisfactoriamente el documento: " + DocumentoGenerado, "SEGURIDAD", WIDTH, null);
+        }else{
+            JOptionPane.showMessageDialog(null, "Error al registrar el documento, revisar lo siguiente: " + Validacion.toString(), "SEGURIDAD", WIDTH, null);
+        }
+
     }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
-        // TODO add your handling code here:
-        Utilitario.validaEnterosKeypress(evt);
-    }//GEN-LAST:event_jTextField2KeyPressed
-
-    private void jTextField8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyPressed
-        // TODO add your handling code here:
-        Utilitario.validaEnterosKeypress(evt);
-    }//GEN-LAST:event_jTextField8KeyPressed
-
-    private void jTextField9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField9KeyPressed
-        // TODO add your handling code here:
-        Utilitario.validaEnterosKeypress(evt);
-    }//GEN-LAST:event_jTextField9KeyPressed
 
     private void jTextField10KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField10KeyPressed
         // TODO add your handling code here:
         Utilitario.validaEnterosKeypress(evt);
     }//GEN-LAST:event_jTextField10KeyPressed
 
+    private void jTextField9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField9KeyPressed
+        // TODO add your handling code here:
+        Utilitario.validaEnterosKeypress(evt);
+    }//GEN-LAST:event_jTextField9KeyPressed
+
+    private void jTextField8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyPressed
+        // TODO add your handling code here:
+        Utilitario.validaEnterosKeypress(evt);
+    }//GEN-LAST:event_jTextField8KeyPressed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        // TODO add your handling code here:
+        Utilitario.validaEnterosKeypress(evt);
+    }//GEN-LAST:event_jTextField2KeyPressed
+    private  String padRight(String s, int n) {
+    return String.format("%1$-" + n + "s", s);
+    }
     /**
      * @param args the command line arguments
      */
@@ -562,7 +601,6 @@ public class FrmCompras extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -600,5 +638,8 @@ public class FrmCompras extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton5;
     // End of variables declaration//GEN-END:variables
 }
