@@ -8,9 +8,6 @@ import crm.benedicto.gestion.model.Cliente;
 import crm.benedicto.gestion.bd.Clientes;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JOptionPane;
-import javax.swing.JOptionPane;
-
 
 public class AdministracionCliente extends javax.swing.JFrame {
 
