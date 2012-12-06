@@ -23,6 +23,7 @@ public class Usuario {
    private String fecIngreso;
    private String cargo;
    private String rol;
+   private int indice;
 
     public Usuario() {
     }
@@ -50,6 +51,10 @@ public class Usuario {
    
     // GETTERS
     
+    public int getIndice() {
+        return indice;
+    }
+       
     public String getUsuario() {
         return usuario;
     }
@@ -91,6 +96,14 @@ public class Usuario {
     }
    
    // SETTER
+    
+    public void setIndice(int indice) {
+        this.indice = indice;
+    }
+    
+    public void setUsurio(String usuario) {
+        this.usuario = usuario;
+    }
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;

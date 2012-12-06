@@ -21,6 +21,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
      */
     
     private AdministracionUsuarioController objAdmCtrl;
+    private int usuElim=-1;
   
     
     public AdministracionUsuario() {
@@ -216,6 +217,11 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         });
 
         button3.setLabel("ELIMINAR");
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout EliminarLayout = new javax.swing.GroupLayout(Eliminar);
         Eliminar.setLayout(EliminarLayout);
@@ -324,27 +330,27 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
         label5.setText("Creado el");
 
-        jTextField3.setText("jTextField3");
+        jTextField3.setText("55546765");
 
-        jTextField4.setText("jTextField4");
+        jTextField4.setText("Carlos Augusto");
 
-        jTextField5.setText("jTextField5");
+        jTextField5.setText("Diaz");
 
-        jTextField6.setText("jTextField6");
+        jTextField6.setText("Huiza");
 
-        jTextField7.setText("jTextField7");
+        jTextField7.setText("cdiaz");
 
-        jTextField8.setText("jTextField8");
+        jTextField8.setText("cdiazhuiza@gmail.com");
 
-        jTextField9.setText("jTextField9");
+        jTextField9.setText("31/12/2010");
 
-        jTextField10.setText("jTextField10");
+        jTextField10.setText("Supervisor");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Prospecto", "Cliente", "Profesor" }));
 
-        jTextField11.setText("jTextField11");
+        jTextField11.setText("12345");
 
-        jTextField12.setText("jTextField12");
+        jTextField12.setText("12345");
 
         javax.swing.GroupLayout AddLayout = new javax.swing.GroupLayout(Add);
         Add.setLayout(AddLayout);
@@ -698,48 +704,56 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    //INGRESAR
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
 
        Usuario  objUsuario = new Usuario();
+       objAdmCtrl = new AdministracionUsuarioController();
+               
+       String rol = (String) jComboBox1.getSelectedItem();
        
-      
+       objUsuario.setDni(jTextField3.getText());
+       objUsuario.setNombre(jTextField4.getText());       
+       objUsuario.setApPaterno(jTextField5.getText());       
+       objUsuario.setApMaterno(jTextField6.getText());       
+       objUsuario.setUsurio(jTextField7.getText());          
+       objUsuario.setEmail(jTextField8.getText());             
+       objUsuario.setFecIngreso(jTextField9.getText());                  
+       objUsuario.setCargo(jTextField10.getText());
+       objUsuario.setRol(rol);                     
+       objUsuario.setContrasena(jTextField11.getText());
        
-      /*  Usuario u = new Usuario(textField5.getText()
-                ,textField9.getText()
-                ,textField1.getText()
-                ,textField2.getText()
-                ,textField3.getText()
-                ,textField4.getText()
-                ,textField6.getText()
-                ,textField7.getText()
-                ,textField8.getText()
-                ,"Adminsitrador");//,choice1.getName());
-        
-        Usuarios.usuarios.add(u);*/
-        
-       JOptionPane.showMessageDialog(null, "OK", "SEGURIDAD", WIDTH, null);
-        
+          
+       
+       if(objAdmCtrl.ingresarUsuario(objUsuario)){
+            JOptionPane.showMessageDialog(null, "Se ingreso usuario correctamente", "CRM - Administración Usuarios", WIDTH, null);
+       }else{
+            JOptionPane.showMessageDialog(null, "No se pudo ingresar usuario", "CRM - Administración Usuarios", WIDTH, null);
+       }
+           
         
     }//GEN-LAST:event_button4ActionPerformed
 
+    //BUScAR
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        
+      pintarCabecera();
+             
       ArrayList<Usuario> usuariosBusqueda = new ArrayList<Usuario>();  
-        
-      JOptionPane.showMessageDialog(null,jTextField2.getText() , "SEGURIDAD", WIDTH, null);  
-        
-      String a = "Hola";
-      JOptionPane.showMessageDialog(null,a.indexOf(jTextField2.getText())+"" , "SEGURIDAD", WIDTH, null);  
-      
-      
-      
+            
       for(Usuario objUsuaBusqueda : Usuarios.usuarios){
           if( objUsuaBusqueda.getUsuario().indexOf(jTextField2.getText())!=-1){
               usuariosBusqueda.add(objUsuaBusqueda);
-          }
-          
-      }
+          }     
+      }    
+      
+      pintarResultado(usuariosBusqueda);
+           
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void pintarCabecera(){
         
         textArea1.setText("");
         
@@ -779,39 +793,52 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         textArea1.append("******************"); 
         textArea1.append("**************************************************\n");
         
+    
+    }
+    
+    private void pintarResultado(ArrayList<Usuario> usuariosBusqueda){
+       
         for(Usuario objUsua : usuariosBusqueda){
             
-            textArea1.append(padRight( objUsua.getUsuario(),25));
-             textArea1.append(padRight(objUsua.getContrasena(),25));
-              textArea1.append(padRight( objUsua.getDni(),25));
-              textArea1.append(padRight( objUsua.getNombre(),25));
-              textArea1.append(padRight( objUsua.getApPaterno(),25));
-              textArea1.append(padRight( objUsua.getApMaterno(),25));
-              textArea1.append(padRight( objUsua.getEmail(),25));
-              textArea1.append(padRight( objUsua.getFecIngreso(),25));
-              textArea1.append(padRight( objUsua.getCargo(),25)); 
-            textArea1.append(padRight( objUsua.getRol(),25)+"\n");
-                     
+            textArea1.append(padRight( objUsua.getUsuario(),28));
+             textArea1.append(padRight(objUsua.getContrasena(),28));
+              textArea1.append(padRight( objUsua.getDni(),28));
+              textArea1.append(padRight( objUsua.getNombre(),28));
+              textArea1.append(padRight( objUsua.getApPaterno(),28));
+              textArea1.append(padRight( objUsua.getApMaterno(),28));
+              textArea1.append(padRight( objUsua.getEmail(),28));
+              textArea1.append(padRight( objUsua.getFecIngreso(),20));
+              textArea1.append(padRight( objUsua.getCargo(),22)); 
+            textArea1.append(padRight( objUsua.getRol(),28)+"\n");                
                 
-        }     
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+        }  
+    }
+    
+    
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
         
-        Usuario objUsuario=null; 
         objAdmCtrl = new AdministracionUsuarioController();
         
-        objUsuario = objAdmCtrl.validarUsuario(null);
+        
+        Usuario objUsuario=new Usuario();      
+        
+        objUsuario = objAdmCtrl.validarUsuario(textField11.getText());
         
         if(objUsuario == null){
+            
+            textField12.setText("");
+            textField13.setText("");
+            textField14.setText("");
+            
             JOptionPane.showMessageDialog(null,"El usuario no es valido" , "CRM - Administración Usuarios", WIDTH, null);
         }else{
         
             textField12.setText(objUsuario.getNombre());
             textField13.setText(objUsuario.getApPaterno());
             textField14.setText(objUsuario.getApMaterno());
+            
+            usuElim = objUsuario.getIndice();
             
         }
           
@@ -857,6 +884,18 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+        // TODO add your handling code here:
+        
+        if(usuElim != -1){
+            if(Usuarios.usuarios.get(usuElim).getUsuario().equals(textField11.getText())){
+            
+            }
+        }
+        
+        
+    }//GEN-LAST:event_button3ActionPerformed
 
    private  String padRight(String s, int n) {
     return String.format("%1$-" + n + "s", s);
