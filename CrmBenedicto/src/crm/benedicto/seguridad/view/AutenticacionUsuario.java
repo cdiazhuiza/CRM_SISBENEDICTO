@@ -40,7 +40,6 @@ public class AutenticacionUsuario extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,7 +47,7 @@ public class AutenticacionUsuario extends javax.swing.JFrame {
 
         jLabel2.setText("Contraseña :");
 
-        jTextField1.setName("txtUsuario");
+        jTextField1.setName("txtUsuario"); // NOI18N
 
         jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -63,27 +62,15 @@ public class AutenticacionUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Test");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField1)
@@ -103,9 +90,7 @@ public class AutenticacionUsuario extends javax.swing.JFrame {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addComponent(jButton1)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -137,11 +122,15 @@ public class AutenticacionUsuario extends javax.swing.JFrame {
        */
         
         auc = new AutenticacionUsuarioController();
-        if(auc.validarUsuario(jTextField1.getText(), jTextField2.getText()))
+        if(auc.validarUsuario(jTextField1.getText(), jTextField2.getText())){
             JOptionPane.showMessageDialog(null, "OK", "SEGURIDAD", WIDTH, null);
-        else
+             AdministracionUsuario usu = new AdministracionUsuario();
+             usu.setVisible(true);
+             this.hide();    
+        }
+        else{
             JOptionPane.showMessageDialog(null, "Usuario o contraseña es incorrecto", "SEGURIDAD", WIDTH, null);
-        
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -165,29 +154,6 @@ public class AutenticacionUsuario extends javax.swing.JFrame {
         * 
         */
     }//GEN-LAST:event_jTextField2KeyPressed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
-          
-       ArrayList<Usuario> usuarios = new ArrayList<Usuario>() ;
-       
-        Usuario u1 = new Usuario("a", "a");
-        Usuario u2 = new Usuario("b", "b");
-        Usuario u3 = new Usuario("c", "c");
-        
-        usuarios.add(u1);
-        usuarios.add(u2);
-        usuarios.add(u3);
-       
-        Usuario usuario;
-       
-       for(Usuario  objUsua : usuarios){     
-        JOptionPane.showMessageDialog(null, "Mensaje", "Titulo", WIDTH, null);
-       }
-       
-       
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,7 +198,6 @@ public class AutenticacionUsuario extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;

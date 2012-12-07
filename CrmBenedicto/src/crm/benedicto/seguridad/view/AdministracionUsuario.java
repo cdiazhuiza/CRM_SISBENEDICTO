@@ -4,6 +4,7 @@
  */
 package crm.benedicto.seguridad.view;
 
+import crm.benedicto.gestion.view.FrmVentas;
 import crm.benedicto.seguridad.controller.AdministracionUsuarioController;
 import crm.benedicto.seguridad.model.Usuario;
 import crm.benedicto.seguridad.bd.Usuarios;
@@ -53,6 +54,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         textArea1 = new java.awt.TextArea();
+        jToggleButton1 = new javax.swing.JToggleButton();
         Eliminar = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         label1 = new java.awt.Label();
@@ -158,6 +160,13 @@ public class AdministracionUsuario extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton1.setText("<<Gestion>>");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout BuscarLayout = new javax.swing.GroupLayout(Buscar);
         Buscar.setLayout(BuscarLayout);
         BuscarLayout.setHorizontalGroup(
@@ -169,14 +178,16 @@ public class AdministracionUsuario extends javax.swing.JFrame {
                         .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
                         .addGap(12, 12, 12))
                     .addGroup(BuscarLayout.createSequentialGroup()
-                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(textArea1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BuscarLayout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addGap(31, 31, 31)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(74, 74, 74)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jToggleButton1)
+                            .addGroup(BuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(textArea1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BuscarLayout.createSequentialGroup()
+                                    .addComponent(jLabel17)
+                                    .addGap(31, 31, 31)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(74, 74, 74)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         BuscarLayout.setVerticalGroup(
@@ -191,7 +202,9 @@ public class AdministracionUsuario extends javax.swing.JFrame {
                     .addComponent(jButton1))
                 .addGap(25, 25, 25)
                 .addComponent(textArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addComponent(jToggleButton1)
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Buscar", Buscar);
@@ -1154,6 +1167,14 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        FrmVentas ventas = new FrmVentas();
+        ventas.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
         
    private  String padRight(String s, int n) {
     return String.format("%1$-" + n + "s", s);
@@ -1256,6 +1277,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JToggleButton jToggleButton1;
     private java.awt.Label label1;
     private java.awt.Label label10;
     private java.awt.Label label11;
