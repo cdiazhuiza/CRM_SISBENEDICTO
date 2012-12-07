@@ -2,20 +2,20 @@
 package crm.benedicto.gestion.model;
 
 abstract class Documento {
-    String Serie;  
-    int Numero;    
-    String Concepto; 
-    String fechaEmision;
-    String Empresa;
-    String FechaVencimiento;
-    String Estado;
+    private String Serie;  
+    private int Numero;    
+    private String Concepto; 
+    private String fechaEmision;
+    private String Empresa;
+    private String FechaVencimiento;
+    private String Estado;
     
-    Double subtotal;
-    Double igv;
-    Double Total;
-    String Moneda;
-    String FechaPago;
-    String Observaciones;
+    private Double subtotal;
+    private Double igv;
+    private Double Total;
+    private String Moneda;
+    private String FechaPago;
+    private String Observaciones;
     
     public Documento(String Serie, int Numero, String Concepto, String fechaEmision, String Empresa, String FechaVencimiento, String Estado, Double subtotal, Double igv, Double Total, String Moneda, String FechaPago, String Observaciones) {
         this.Serie = Serie;
