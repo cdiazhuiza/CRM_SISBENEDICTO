@@ -216,8 +216,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
         label1.setText("Usuario");
 
-        textField11.setText("textField11");
-
         button1.setLabel("VALIDAR");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,12 +228,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         label7.setText("Apellido Paterno");
 
         label8.setText("Apellido Materno");
-
-        textField12.setText("textField12");
-
-        textField13.setText("textField13");
-
-        textField14.setText("textField14");
 
         button2.setLabel("LIMPIAR");
         button2.addActionListener(new java.awt.event.ActionListener() {
@@ -526,7 +518,12 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         textField19.setText("Supervisor de Ventas");
 
         textField20.setName("txtUsuario"); // NOI18N
-        textField20.setText("cdiazhuiza");
+        textField20.setText("cdiaz");
+        textField20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField20ActionPerformed(evt);
+            }
+        });
 
         jLabel18.setText("DNI - Identificación");
 
@@ -696,8 +693,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         jLabel21.setText("Cambio de Contraseña");
         jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextField13.setText("jTextField13");
-
         jButton3.setText("Validar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -710,12 +705,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         jLabel30.setText("Nueva Contraseña");
 
         jLabel31.setText("Confirmar Contraseña");
-
-        jTextField14.setText("jTextField14");
-
-        jTextField15.setText("jTextField15");
-
-        jTextField16.setText("jTextField16");
 
         jButton4.setText("Cambiar Contraseña");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -951,11 +940,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
               
          if(usuEdit != -1){
             if(Usuarios.usuarios.get(usuEdit).getUsuario().equals(textField20.getText())){
-                
-                
-                
                 Usuario objUsuEdit = new Usuario();
-                
                 
                 String rol = (String) jComboBox2.getSelectedItem();
        
@@ -967,17 +952,14 @@ public class AdministracionUsuario extends javax.swing.JFrame {
                 objUsuEdit.setEmail(textField18.getText());             
                 objUsuEdit.setFecIngreso(textField17.getText());                  
                 objUsuEdit.setCargo(textField19.getText());
-                objUsuEdit.setRol(rol);                     
+                objUsuEdit.setRol(rol);
                 objUsuEdit.setContrasena(Usuarios.usuarios.get(usuEdit).getContrasena());
                 
-                Usuarios.usuarios.remove(usuEdit);
-            
+                Usuarios.usuarios.remove(usuEdit);            
                 usuEdit = -1;
                 
                 Usuarios.usuarios.add(objUsuEdit);
-                
-                
-                
+
                 JOptionPane.showMessageDialog(null,"Se edito Usuario correctamente" , "CRM - Administración Usuarios", WIDTH, null);
             }else{
                 JOptionPane.showMessageDialog(null,"Se debe validar el Usuario" , "CRM - Administración Usuarios", WIDTH, null);
@@ -1105,7 +1087,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
             
             usuPWD = objUsuario.getIndice();
             strPWD = objUsuario.getContrasena();
-            
         }
           
         
@@ -1174,6 +1155,10 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         ventas.setVisible(true);
         this.hide();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void textField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField20ActionPerformed
 
         
    private  String padRight(String s, int n) {
